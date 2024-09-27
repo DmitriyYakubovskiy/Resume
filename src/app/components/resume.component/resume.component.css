@@ -1,0 +1,54 @@
+h1
+{
+  padding-top: 8%;
+  text-align:center;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 28pt;
+  font-weight: normal;
+}
+
+p
+{
+  margin-top: -4px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 14pt;
+}
+
+.container
+{
+  width: 798px;
+  height: 1142px;
+  border: 1px solid gray;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4%;
+  margin-bottom: 2%;
+}
+
+.personal-info
+{
+  margin-top: 30px;
+  width: 77%;
+  border: 2px solid white;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+}
+
+.personal-info-description
+{
+  width: 77%;
+  border: 2px solid white;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.profile-photo {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 30px;
+}

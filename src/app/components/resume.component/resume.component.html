@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="personal-info">
+    <img class="profile-photo" [src]="resume.photo" alt="Фотография">
+    <div>
+      <h2>{{ resume.name }}</h2>
+      <p>Специальность: {{ resume.speciality }}</p>
+      <p>Телефон: {{ resume.phone }}</p>
+      <p>Город: {{ resume.city }}</p>
+    </div>
+  </div>
+  <div class="personal-info-description">
+    <h3>О себе:</h3>
+    <p>{{ resume.description }}</p>
+    <app-experience></app-experience>
+    <app-skills></app-skills>
+    <h3>Ссылки</h3>
+    <ul>
+      <li *ngFor="let link of resume.links"><a href="{{ link.url }}">{{ link.name }}</a></li>
+    </ul>
+  </div>
+</div>
