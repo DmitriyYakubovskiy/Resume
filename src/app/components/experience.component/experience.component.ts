@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import {NgFor, NgIf} from '@angular/common';
 import {FormsModule} from '@angular/forms';
-import { Resume } from '../../models/resume.model';
-import { ResumeService } from '../../services/resume.service';
 import { Experience } from '../../models/experience';
+import { ExperienceService } from '../../services/experience.service';
 
 @Component({
   selector: 'app-experience',
@@ -14,9 +13,18 @@ import { Experience } from '../../models/experience';
 export class ExperienceComponent {
   experience:Experience
 
-  constructor(private resumeService:ResumeService) {}
+  constructor(private experienceService:ExperienceService) {}
 
   ngOnInit(): void{
-    this.experience=this.resumeService.getResume().experience;
+    this.experience=this.experienceService.getExperience();
+  }
+
+  addWork(): void{
+    const duration = prompt("Введите длительность работы:");
+    const name = prompt("Введите имя работы: ");
+    if (duration && name) {
+      this.experienceService.addWork(Number(duration), name);
+      this.experience=this.experienceService.getExperience();
+    }
   }
 }

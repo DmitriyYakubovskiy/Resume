@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import {NgFor, NgIf} from '@angular/common';
 import {FormsModule} from '@angular/forms';
-import { ResumeService } from '../../services/resume.service';
 import { Skills } from '../../models/skills';
+import { SkillsService } from '../../services/skills.service';
 
 @Component({
   selector: 'app-skills',
@@ -13,9 +13,25 @@ import { Skills } from '../../models/skills';
 export class SkillsComponent {
   skills : Skills
 
-  constructor(private resumeService:ResumeService) {}
+  constructor(private skillsService:SkillsService) {}
 
   ngOnInit(): void{
-    this.skills=this.resumeService.getResume().skills;
+    this.skills=this.skillsService.getSkills();
+  }
+
+  addHardSkill(): void {
+    const skill = prompt("Введите новый Hard Skill:");
+    if (skill) {
+      this.skillsService.addHardSkill(skill);
+      this.skills = this.skillsService.getSkills();
+    }
+  }
+
+  addSoftSkill(): void {
+    const skill = prompt("Введите новый Soft Skill:");
+    if (skill) {
+      this.skillsService.addSoftSkill(skill);
+      this.skills = this.skillsService.getSkills();
+    }
   }
 }

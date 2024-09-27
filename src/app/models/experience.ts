@@ -1,3 +1,3 @@
 export class Experience {
-  works: { duration: number, name: string }[] = []
+  works: { duration: number, name: string }[] = [];
 }
